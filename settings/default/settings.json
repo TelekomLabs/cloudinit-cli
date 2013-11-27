@@ -1,0 +1,7 @@
+{
+    "chef": {
+        "validator_key": "pk.key",
+        "chef_server_url": "https://example.com/organizations/org",
+        "validation_client_name": "yourvalidator"
+    }
+}

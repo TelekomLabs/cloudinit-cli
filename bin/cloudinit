@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+    app = require('../lib/app'),
+    path = require('path'),
+    nconf = require('nconf'),
+    fs = require('fs');
+
+program
+    .version('0.0.1')
+    .option('-i, --input [file]', 'chef dna or chef rols [file]')
+    .option('-o, --outputfile [file]', 'generated cloudinit file')
+    .option('-e, --env [name]', 'configuration environment [name]', 'default')
+    .parse(process.argv);
+
+if (program.input) {
+
+    // load settings from selected environment
+    var settingsdirectory = path.resolve(__dirname, '..', 'settings', program.env.toString())
+    nconf.file({
+        file: path.resolve(settingsdirectory, 'settings.json')
+    });
+
+    // generate config for this run
+    var params = {
+        input: path.resolve(__dirname, '..', program.input.toString()),
+        output: program.outputfile,
+        settings: nconf,
+        settingsdirectory: settingsdirectory
+    }
+
+    // start converter
+    app.convert(params, function (err) {
+        // TODO return proper error code
+    });
+}
