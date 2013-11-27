@@ -32,5 +32,8 @@ if (program.input) {
     // start converter
     app.convert(params, function (err) {
         // TODO return proper error code
+        if (err) {
+            console.log('Something went wrong: %s', err);
+        }
     });
 }
