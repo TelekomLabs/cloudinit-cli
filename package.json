@@ -1,6 +1,6 @@
 {
   "name": "cloudinit-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Manage Cloud and DevOps",
   "homepage": "http://www.laboratories.telekom.com",
   "repository": {
@@ -15,9 +15,11 @@
     "email": "c.hartmann@telekom.de",
     "url": "http://www.laboratories.telekom.com"
   },
-  "licenses": [{
-    "type": "Apache 2"
-  }],
+  "licenses": [
+    {
+      "type": "Apache 2"
+    }
+  ],
   "dependencies": {
     "cloudinit": "~0.1.0",
     "pkgcloud": "~0.8.3",
