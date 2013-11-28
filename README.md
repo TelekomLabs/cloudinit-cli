@@ -63,7 +63,7 @@ Or just run the generated script on your target machine
 # Reference
 
  - [Cloudinit](http://cloudinit.readthedocs.org/en/latest/)
- - [Cloudint for Windows](https://github.com/cloudbase/cloudbase-init) 
+ - [Cloudinit for Windows](https://github.com/cloudbase/cloudbase-init) 
 
 # License
 
