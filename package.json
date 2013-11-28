@@ -1,6 +1,6 @@
 {
   "name": "cloudinit-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Manage Cloud and DevOps",
   "homepage": "http://www.laboratories.telekom.com",
   "author": {
@@ -8,21 +8,25 @@
     "email": "c.hartmann@telekom.de",
     "url": "http://www.laboratories.telekom.com"
   },
-  "licenses": [{
-    "type": "Apache 2"
-  }],
+  "licenses": [
+    {
+      "type": "Apache 2"
+    }
+  ],
   "dependencies": {
-    "cloudinit" : "~0.1.0",
+    "cloudinit": "~0.1.0",
     "pkgcloud": "~0.8.3",
     "commander": "~2.0.0",
-    "nconf" : "~0.6.8",
-    "winston" : "~0.7.2"
+    "nconf": "~0.6.8",
+    "winston": "~0.7.2"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.2.0",
     "grunt-mocha-test": "~0.7.0"
   },
-  "bin": { "cloudinit": "./bin/cloudinit" },
+  "bin": {
+    "cloudinit": "./bin/cloudinit"
+  },
   "scripts": {
     "test": "grunt test --verbose"
   },
