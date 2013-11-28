@@ -1,4 +1,5 @@
-.jshintrc{
+{
+    "asi" : true,
     "curly": true,
     "eqeqeq": true,
     "forin": true,
