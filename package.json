@@ -3,16 +3,21 @@
   "version": "0.1.0",
   "description": "Manage Cloud and DevOps",
   "homepage": "http://www.laboratories.telekom.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:TelekomLabs/cloudinit-cli.git"
+  },
+  "bugs": {
+    "url": "http://github.com/TelekomLabs/cloudinit-cli/issues"
+  },
   "author": {
     "name": "Christoph Hartmann",
     "email": "c.hartmann@telekom.de",
     "url": "http://www.laboratories.telekom.com"
   },
-  "licenses": [
-    {
-      "type": "Apache 2"
-    }
-  ],
+  "licenses": [{
+    "type": "Apache 2"
+  }],
   "dependencies": {
     "cloudinit": "~0.1.0",
     "pkgcloud": "~0.8.3",
