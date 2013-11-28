@@ -12,6 +12,7 @@
     "type": "Apache 2"
   }],
   "dependencies": {
+    "cloudinit" : "~0.1.0",
     "pkgcloud": "~0.8.3",
     "commander": "~2.0.0",
     "nconf" : "~0.6.8",
