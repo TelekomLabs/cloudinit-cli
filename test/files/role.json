@@ -1,0 +1,13 @@
+{
+  "name": "test",
+  "default_attributes": {
+    "param1" : "test"
+  },
+  "override_attributes": {
+    "param2" : "test2"
+  },
+  "json_class": "Chef::Role",
+  "description": "This is just a test role, no big deal.",
+  "chef_type": "role",
+  "run_list": [ "recipe[test]" ]
+}

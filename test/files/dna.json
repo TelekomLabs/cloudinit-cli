@@ -1,0 +1,7 @@
+{
+  "resolver": {
+    "nameservers": [ "10.0.0.1" ],
+    "search":"int.example.com"
+  },
+  "run_list": [ "recipe[resolver]" ]
+}
