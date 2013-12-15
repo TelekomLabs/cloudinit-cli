@@ -47,6 +47,25 @@ Or just run the generated script on your target machine
 
     ./dna.sh
 
+# Define your own environment
+
+All environments are located in `settings`. The default environment is stored in `settings/default`. An environment consists of two files:
+
+ - `pk.key`
+ - `settings.json`
+
+The private key is your private chef-validator key. In `settings.json` are all your chef-configurations.
+
+```json
+{
+    "chef": {
+        "validator_key": "pk.key",
+        "chef_server_url": "https://example.com/organizations/org",
+        "validation_client_name": "yourvalidator"
+    }
+}
+```
+
 # What is supported 
 
  - read dna.json and generate a proper bash script to run on your server (see `test/files` for samples)
