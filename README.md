@@ -21,6 +21,14 @@ This cli tool helps you to easily generate a bash or powershell file to use for 
 
 # Installation
 
+Prepare your OS with nodejs installation e.g. for Ubuntu
+
+    apt-get update && apt-get install -y python-software-properties python g++ make && add-apt-repository -y ppa:chris-lea/node.js && apt-get update && apt-get install -y nodejs
+
+Please have a look at [nodejs](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) for other operating systems.
+
+After nodejs is installed 
+
     npm install -g cloudinit-cli
 
 # Usage
