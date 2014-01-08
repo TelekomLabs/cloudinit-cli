@@ -49,7 +49,7 @@ Or just run the generated script on your target machine
 
 # Define your own environment
 
-All environments are located in `settings`. The default environment is stored in `settings/default`. An environment consists of two files:
+To define your own environment, create a `~/.cloudinit/YOURENVIRONMENT` folder and add the following two files:
 
  - `pk.key`
  - `settings.json`
