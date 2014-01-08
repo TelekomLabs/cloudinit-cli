@@ -4,7 +4,12 @@ var program = require('commander'),
     app = require('../lib/app'),
     path = require('path'),
     nconf = require('nconf'),
-    fs = require('fs');
+    fs = require('fs'),
+    logger = require('../lib/logger');
+
+function getUserHome() {
+    return process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
+}
 
 program
     .version('0.0.1')
@@ -15,8 +20,43 @@ program
 
 if (program.input) {
 
-    // load settings from selected environment
-    var settingsdirectory = path.resolve(__dirname, '..', 'settings', program.env.toString())
+    logger.info('load environment');
+
+    // load settings from different locations in the following order:
+    // - installation dir after npm install -g (__dirname)
+    // - home directory of current user
+    // - absolute path
+
+    var search = [];
+
+    search.push(path.resolve(__dirname, '..', 'settings', program.env.toString()));
+    search.push(path.resolve(getUserHome(), '.cloudinit', program.env.toString()));
+    search.push(path.resolve(program.env.toString()));
+
+    var settingsdirectory = null;
+
+    // decide for the right path
+    var stats = null;
+
+    for (var i = 0, l = search.length; i < l; i = i + 1) {
+        try {
+            var dir = search[i];
+            // Query the entry
+            stats = fs.lstatSync(dir);
+
+            // Is it a directory?
+            if (stats.isDirectory()) {
+                settingsdirectory = dir
+
+                // abort after first success
+                break;
+            }
+        } catch (e) {
+            logger.error(e);
+        }
+    }
+
+    // load config
     nconf.file({
         file: path.resolve(settingsdirectory, 'settings.json')
     });
@@ -33,7 +73,7 @@ if (program.input) {
     app.convert(params, function (err) {
         // TODO return proper error code
         if (err) {
-            console.log('Something went wrong: %s', err);
+            logger.error('Something went wrong: %s', err);
         }
     });
 }
