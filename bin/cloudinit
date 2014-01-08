@@ -12,7 +12,7 @@ function getUserHome() {
 }
 
 program
-    .version('0.0.1')
+    .version(require(path.resolve(__dirname, '..', 'package.json')).version)
     .option('-i, --input [file]', 'chef dna or chef rols [file]')
     .option('-o, --outputfile [file]', 'generated cloudinit file')
     .option('-e, --env [name]', 'configuration environment [name]', 'default')
