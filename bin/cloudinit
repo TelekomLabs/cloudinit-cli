@@ -17,6 +17,7 @@ program
     .option('-i, --input [file]', 'chef dna or chef rols [file]')
     .option('-o, --outputfile [file]', 'generated cloudinit file')
     .option('-e, --env [name]', 'configuration environment [name]', 'default')
+    .option('-t, --target [unix|win]', 'sets the target operating system (unix is default)', 'unix')
     .parse(process.argv);
 
 if (program.input) {
@@ -66,7 +67,8 @@ if (program.input) {
     var params = {
         input: path.resolve(process.cwd().toString(), program.input.toString()),
         settings: nconf,
-        settingsdirectory: settingsdirectory
+        settingsdirectory: settingsdirectory,
+        target  : program.target.toString()
     }
 
     // set output parameter if defined

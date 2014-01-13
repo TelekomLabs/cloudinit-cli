@@ -74,6 +74,16 @@ The private key is your private chef-validator key. In `settings.json` are all y
 }
 ```
 
+# Build cloudinit for unix and windows
+
+    # generate unix cloudinit
+    cloudinit -i test/files/dna.json -t unix
+    # or just (unix is default)
+    cloudinit -i test/files/dna.json
+
+    # for windows
+    cloudinit -i test/files/dna.json -t win
+
 # What is supported 
 
  - read dna.json and generate a proper bash script to run on your server (see `test/files` for samples)

@@ -21,7 +21,7 @@
     }
   ],
   "dependencies": {
-    "cloudinit": "~0.1.0",
+    "cloudinit": "~0.2.0",
     "commander": "~2.0.0",
     "nconf": "~0.6.8",
     "winston": "~0.7.2"
