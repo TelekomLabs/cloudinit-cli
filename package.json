@@ -1,6 +1,6 @@
 {
   "name": "cloudinit-cli",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Manage Cloud and DevOps",
   "homepage": "http://www.laboratories.telekom.com",
   "repository": {
